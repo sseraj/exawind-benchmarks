@@ -1,0 +1,1 @@
+Cases that serve as benchmarks for AMR-Wind alone. These include cases featured by the AMR-Wind methods paper.
