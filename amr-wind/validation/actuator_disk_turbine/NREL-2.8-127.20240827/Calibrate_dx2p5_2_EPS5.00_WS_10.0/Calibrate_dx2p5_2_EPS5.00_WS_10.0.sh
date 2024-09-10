@@ -2,7 +2,7 @@
 #SBATCH --nodes=8
 #SBATCH --time=4:00:00        # Wall clock time (HH:MM:SS) - once the job exceeds this time, the job will be terminated (default is 5 minutes)
 #SBATCH --account=fy210193        # WC ID
-#SBATCH --job-name=Cstm2p8    # Name of job
+#SBATCH --job-name=NREL2p8    # Name of job
 #SBATCH --partition=batch,short # partition/queue name: short or batch
 #SBATCH --qos=normal           # Quality of Service: long, large, priority or normal 
 # Number of nodes - the number of nodes you have requested (for a list of SLURM environment variables see "man sbatch")
@@ -18,5 +18,5 @@ export ncpus=$((nodes * cores))
 export OMP_PROC_BIND=spread 
 export OMP_PLACES=threads
 
-mpiexec --bind-to core --npernode $cores --n $ncpus /projects/wind_uq/lcheung/AMRWindBuilds/hfm.20240102/amr-wind/build/amr_wind Calibrate_dx2p5_3_EPS5.00_WS_11.0.inp
+mpiexec --bind-to core --npernode $cores --n $ncpus /projects/wind_uq/lcheung/AMRWindBuilds/hfm.20240102/amr-wind/build/amr_wind Calibrate_dx2p5_2_EPS5.00_WS_10.0.inp
     
