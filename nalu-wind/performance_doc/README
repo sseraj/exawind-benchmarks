@@ -1,0 +1,14 @@
+The directory contains log files for runs with 1, 2, 4, 6 and 8 compute nodes
+for NACA 0021 airfoil at 30-degree AOA.
+
+* All runs were conducted on the Kestrel supercomputer with 96 cores per node
+
+* The runs were conducted for 100 iterations and the wall-clock time presented below
+are averaged time over the last 5 iterations:
+
+#Nodes	Wall-clock time (s)
+  1		10.8
+  2             4.8
+  4             2.9
+  6             2.7
+  8             3.6
