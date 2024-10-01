@@ -1,1 +1,2 @@
+# Nalu-Wind benchmarks
 These cases serve as benchmarks for Nalu-Wind alone. Currently, the foremost Nalu-Wind benchmark cases are simulations of airfoils in turbulent flow. Mesh files are not hosted on this repository using git, but instead using DVC.
