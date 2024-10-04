@@ -22,8 +22,8 @@ Six different mesh resolutions were tested, and the results were compared to tho
 <img src="figs/aoa5/nlf0416_aoa5_cd.png" alt="Cf" width="400">
 
 Two different options for the freestream conditions are tested here: 
-- 1) local turbulence intensity with the sustaining terms (green line): same way as the OVERFLOW and FUN3D simulations
-- 2) a constant turbulence intensity without the sustaining terms (red line)
+1) local turbulence intensity with the sustaining terms (green line): same way as the OVERFLOW and FUN3D simulations
+2) a constant turbulence intensity without the sustaining terms (red line)
 
 For the result with the option 1, Nalu-Wind results show similar trends as FUN3D results but slower convergence than OVERFLOW. This is due to the numerical shcemes of the unstructred flow solvers, which have lower-order of accuracy in space than the structured flow solvers.
 
@@ -34,8 +34,8 @@ Option 2 is acitcated only if fsti is explicitly specified in Nalu-Wind input wi
 
 
 ## References
-[^1] “Implementation and Assessment of Menter’s Galilean-Invariant 𝛾
+[^1]: Venkatachari et al., “Implementation and Assessment of Menter’s Galilean-Invariant 𝛾
 Transition Model in OVERFLOW,” AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3533
-[^2] Hildebrand, et al., “Implementation and Verification of the SST-𝛾 and SA-AFT
+[^2]: Hildebrand, et al., “Implementation and Verification of the SST-𝛾 and SA-AFT
 Transition Models in FUN3D,” AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3530.
 
