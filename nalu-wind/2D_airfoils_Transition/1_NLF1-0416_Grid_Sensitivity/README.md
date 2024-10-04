@@ -14,3 +14,15 @@ Six different mesh resolutions were tested, and the results were compared to tho
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
 
 ## Results
+
+### Grid Sensitivity Study at AoA=5deg: Lift coefficient
+<img src="figs/aoa5/nlf0416_aoa5_cl.png" alt="Cf" width="400">
+
+### Grid Sensitivity Study at AoA=5deg: Drag coefficient
+<img src="figs/aoa5/nlf0416_aoa5_cd.png" alt="Cf" width="400">
+
+
+
+## References
+
+
