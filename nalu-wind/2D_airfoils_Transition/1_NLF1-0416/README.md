@@ -12,16 +12,15 @@ Validation and verification of the transition model were conducted for the NASA 
    - 2-D strcutred C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
-- Case run on NREL's Kestrel HPC system using 26 cores / case
-- A case with the "Fine" mesh was run on 26 cores of NREL's Kestrel, took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step
-   - Note that the number of cores per case was not based on the scalability of Nalu-Wind on Kestrel but rather to fit 4 cases onto a single node of Kestrel
+- A case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster
+   - The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
 ## Results: Grid Sensitivity Study
 
-### Lift coefficient at AoA=5deg
+### Lift coefficient at AoA=5°
 <img src="figs/aoa5/nlf0416_aoa5_cl.png" alt="Cf" width="400">
 
-### Drag coefficient at AoA=5deg
+### Drag coefficient at AoA=5°
 <img src="figs/aoa5/nlf0416_aoa5_cd.png" alt="Cf" width="400">
 
 Two different options for the freestream conditions are tested here: 
