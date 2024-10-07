@@ -2,19 +2,18 @@
 
 # NASA NLF(1)-0416
 
-Validation and verification of the transition model is performed for NASA NLF(1)-0416 airfoil using Nalu-Wind with the 1-eq gamma transition model.
-Six different mesh resolutions were tested, and the results were compared to those from NASA’s structred flow solver, OVERFLOW[^1], and unstructred flow solver, FUN3D[^2], using the same turbulence and transition models, CFD meshes, and inflow conditions.
+Validation and verification of the transition model were conducted for the NASA NLF(1)-0416 airfoil using Nalu-Wind with the 1-equation gamma transition model. First, a grid sensitivity study was performed using six different mesh resolutions from the AIAA CFD Transition Modeling DG[^1]. The results were compared to those from NASA’s structured flow solver, OVERFLOW[^2], and unstructured flow solver, FUN3D[^3], utilizing the same turbulence and transition models, CFD meshes, and inflow conditions. Based on these findings, a full angle-of-attack sweep was performed, with results compared to experimental data.
 
 ## Simulation Conditions
 
 - Test airfoil: NASA NLF(1)-0416 airfoil
 - Flow Condition: M=0.1, Re=4million, Tu=0.15%
-- CFD meshes with six different resoltuions provided by [AIAA CFD Transition Modeeling DG](https://transitionmodeling.larc.nasa.gov/) 
-	-- Tiny, Coarse, Medium, Fine, Extra, Ultra[^3]
+- CFD meshes with six different resoltuions provided by [AIAA CFD Transition Modeling DG](https://transitionmodeling.larc.nasa.gov/) 
+ - Tiny, Coarse, Medium, Fine, Extra, Ultra[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
 
-## Results: Grid Sensitivity 
+## Results: Grid Sensitivity Study
 
 ### Lift coefficient at AoA=5deg: 
 <img src="figs/aoa5/nlf0416_aoa5_cl.png" alt="Cf" width="400">
@@ -30,7 +29,7 @@ The grid sensitivitiy results are presented for the lift and drag coefficient. I
 
 Option 2, which applies a constant turbulence intensity, improves grid convergence, particularly at lower mesh resolutions. For more consistent and accurate results with Nalu-Wind, Option 2 is recommended. However, it should be noted that Option 2 is valid only for single airfoil or single turbine simulations. For internal flow or multi-turbine cases, Option 1 should be used. Option 2 is activated only if fsti is explicitly specified in the Nalu-Wind input with a positive value.
 
-## Results: AoA Sweep
+## Results: Angle of Attack Sweep
 
 ### Comparison of the lift coefficient
 <img src="figs/clcd/nlf0416_al_cl.png" alt="Cf" width="400">
@@ -38,13 +37,16 @@ Option 2, which applies a constant turbulence intensity, improves grid convergen
 ### Comparison of the drag polar 
 <img src="figs/clcd/nlf0416_cd_cl.png" alt="Cf" width="400">
 
-Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^4]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation, capturing the trend of the experimental data very well.
+Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^5]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation, capturing the trend of the experimental data very well.
 
+Each case was run on 26 cores of NREL's Kestrel HPC system and took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step.
+Note that the number of cores per case is not based on the scalability of Nalu-Wind but rather to fit 4 cases onto a single node of Kestrel.
 
 ## References
-[^1]: Venkatachari et al., “Implementation and Assessment of Menter’s Galilean-Invariant 𝛾
-Transition Model in OVERFLOW,” AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3533
-[^2]: Hildebrand, et al., “Implementation and Verification of the SST-𝛾 and SA-AFT
-Transition Models in FUN3D,” AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3530.
-[^3]: Coder,J., "Standard Test Cases for Transition Model Verification and Validationin Computational Fluid Dynamics,” 56th AIAA Aerospace Sciences Meeting, January, 2018. https://doi.org/https://doi.org/10.2514/6.2018-0029.
-[^4]: Somers,D.M.,“Design and Experimental Results for a Natural-Laminar-Flow Airfoil for General Aviation Applications,” Tech. Rep. 1861, NASA, 1981.
+[^1]: https://transitionmodeling.larc.nasa.gov/
+[^2]: Venkatachari et al., "Implementation and Assessment of Menter’s Galilean-Invariant 𝛾
+Transition Model in OVERFLOW," AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3533
+[^3]: Hildebrand, et al., "Implementation and Verification of the SST-𝛾 and SA-AFT
+Transition Models in FUN3D," AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3530.
+[^4]: Coder,J., "Standard Test Cases for Transition Model Verification and Validationin Computational Fluid Dynamics," 56th AIAA Aerospace Sciences Meeting, January, 2018. https://doi.org/https://doi.org/10.2514/6.2018-0029.
+[^5]: Somers, D. M., "Design and Experimental Results for a Natural-Laminar-Flow Airfoil for General Aviation Applications," NASA Tech. Rep. 1861, 1981.
