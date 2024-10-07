@@ -9,15 +9,16 @@ Validation of the transition model is conducted for the DU00-W-212 airfoil airfo
 - Test airfoil: DU00-W-212 airfoil with a thickness of 21% 
 - Flow Condition: M=0.1, Re=3million, Tu=0.0864%
 - CFD mesh generated using Pointwise 
-  - 2-D structred O-type mesh, with a resolution equivalent to the "Fine" resolution of the AIAA mesh
+   - 2-D structred O-type mesh, with a resolution equivalent to the "Fine" resolution of the AIAA mesh
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
-
+- Each case was run on 26 cores of NREL's Kestrel, took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step
+   - Note that the number of cores per case was not based on the scalability of Nalu-Wind on Kestrel but rather to fit 4 cases onto a single node of Kestrel
 
 ## Results: Angle of Attack Sweep
 
 ### Comparison of the lift, drag, and pitching moment
-<img src="figs/du_rey_3M.png" alt="Cf" width="600">
+<img src="figs/du_rey_3M.png" alt="Cf" width="1000">
 
 The figure above shows comparisons of the lift, drag, and pitching moment from the experiment, fully turbulent simulations, and transition simulations.
 

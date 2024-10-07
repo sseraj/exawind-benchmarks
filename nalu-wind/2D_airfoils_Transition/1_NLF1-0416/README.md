@@ -12,6 +12,9 @@ Validation and verification of the transition model were conducted for the NASA 
    - 2-D strcutred C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
+- Case run on NREL's Kestrel HPC system using 26 cores / case
+- A case with the "Fine" mesh was run on 26 cores of NREL's Kestrel, took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step
+   - Note that the number of cores per case was not based on the scalability of Nalu-Wind on Kestrel but rather to fit 4 cases onto a single node of Kestrel
 
 ## Results: Grid Sensitivity Study
 
@@ -38,9 +41,6 @@ Option 2, which applies a constant turbulence intensity, improves grid convergen
 <img src="figs/clcd/nlf0416_cd_cl.png" alt="Cf" width="400">
 
 Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^5]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models and other flow solvers. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation, capturing the trend of the experimental data very well.
-
-Each case was run on 26 cores of NREL's Kestrel HPC system and took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step.
-Note that the number of cores per case is not based on the scalability of Nalu-Wind but rather to fit 4 cases onto a single node of Kestrel.
 
 ## References
 [^1]: https://transitionmodeling.larc.nasa.gov/
