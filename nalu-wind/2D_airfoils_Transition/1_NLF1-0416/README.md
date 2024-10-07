@@ -9,7 +9,7 @@ Validation and verification of the transition model were conducted for the NASA 
 - Test airfoil: NASA NLF(1)-0416 airfoil
 - Flow Condition: M=0.1, Re=4million, Tu=0.15%
 - CFD meshes with six different resoltuions provided by [AIAA CFD Transition Modeling DG](https://transitionmodeling.larc.nasa.gov/) 
- - 2-D strcutred C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
+  - 2-D strcutred C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
 
@@ -44,9 +44,9 @@ Note that the number of cores per case is not based on the scalability of Nalu-W
 
 ## References
 [^1]: https://transitionmodeling.larc.nasa.gov/
-[^2]: Venkatachari et al., "Implementation and Assessment of Menter’s Galilean-Invariant 𝛾
+[^2]: Venkatachari, B. S., et al., "Implementation and Assessment of Menter’s Galilean-Invariant 𝛾
 Transition Model in OVERFLOW," AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3533
-[^3]: Hildebrand, et al., "Implementation and Verification of the SST-𝛾 and SA-AFT
+[^3]: Hildebrand, N., et al., "Implementation and Verification of the SST-𝛾 and SA-AFT
 Transition Models in FUN3D," AIAA AVIATION 2023 Forum, 2023. https://doi.org/10.2514/6.2023-3530.
-[^4]: Coder,J., "Standard Test Cases for Transition Model Verification and Validationin Computational Fluid Dynamics," 56th AIAA Aerospace Sciences Meeting, January, 2018. https://doi.org/https://doi.org/10.2514/6.2018-0029.
-[^5]: Somers, D. M., "Design and Experimental Results for a Natural-Laminar-Flow Airfoil for General Aviation Applications," NASA Tech. Rep. 1861, 1981.
+[^4]: Coder, J., "Standard Test Cases for Transition Model Verification and Validationin Computational Fluid Dynamics," 56th AIAA Aerospace Sciences Meeting, January, 2018. https://doi.org/https://doi.org/10.2514/6.2018-0029.
+[^5]: Somers, D. M., "Design and Experimental Results for a Natural-Laminar-Flow Airfoil for General Aviation Applications," NASA Technical Paper 1861, 1981.
