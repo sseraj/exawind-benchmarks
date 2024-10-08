@@ -12,8 +12,6 @@ Validation of the transition model is conducted for the DU00-W-212 airfoil using
    - 2-D structred O-type mesh, with a resolution equivalent to the "Fine" resolution of the AIAA mesh
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
-- Each case took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster
-   - The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
 ## Results: Angle of Attack Sweep
 
@@ -29,6 +27,8 @@ For the drag coefficient, the transition simulation captures the laminar drag bu
 Regarding the pitching moment, the transition simulations show better correlation with the experimental data compared to the fully turbulent simulations in the linear range of the lift curve. After the stall AoA, due to the limitations of the RANS turbulence model, neither simulation captures the pitching moment trends accurately, with both under-predicting the magnitude in the post-stall region.
 
 In summary, the transition model primarily improves drag prediction at low angles of attack before flow separation occurs.
+
+Each case took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
 ## References
 [^1]: https://zenodo.org/records/439827

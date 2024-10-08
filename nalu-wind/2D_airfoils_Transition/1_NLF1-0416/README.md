@@ -6,22 +6,17 @@ Validation and verification of the transition model were conducted for the NASA 
 
 ## Simulation Conditions
 
-- Test airfoil: NASA NLF(1)-0416 airfoil
+- Test airfoil: NASA NLF(1)-0416 airfoil with a thickness of 16%
 - Flow Condition: M=0.1, Re=4million, Tu=0.15%
 - CFD meshes with six different resoltuions provided by AIAA CFD Transition Modeling DG[^1]
    - 2-D strcutred C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
-- A case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster
-   - The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
 ## Results: Grid Sensitivity Study
 
-### Lift coefficient at AoA=5°
-<img src="figs/aoa5/nlf0416_aoa5_cl.png" alt="Cf" width="400">
-
-### Drag coefficient at AoA=5°
-<img src="figs/aoa5/nlf0416_aoa5_cd.png" alt="Cf" width="400">
+### Lift and drag coefficients at AoA=5°
+<img src="figs/aoa5/nlf0416_cl_cd.png" alt="Cf" width="1000">
 
 Two different options for the freestream conditions are tested here: 
 1) Local turbulence intensity with the sustaining terms (green line): same way as the OVERFLOW and FUN3D simulations
@@ -36,10 +31,9 @@ Option 2, which applies a constant turbulence intensity, improves grid convergen
 ### Comparison of the lift and drag coefficient
 <img src="figs/clcd/nlf0416_clcd.png" alt="Cf" width="1000">
 
-
 Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^5]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models and other flow solvers. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation, capturing the trend of the experimental data very well.
 
-A case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster.The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
+Each case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
 ## References
 [^1]: https://transitionmodeling.larc.nasa.gov/
