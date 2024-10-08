@@ -27,8 +27,9 @@ with open('nlf0416_F_rey04000000.yaml', "r") as data1:
     trans=yaml.safe_load(data1)
 
 
-
-fig = plt.figure(1)
+plt.figure(figsize=(12,4.5))
+plt.subplot(1, 2, 1)
+#fig = plt.figure(1)
 plt.plot(cl['aoa'],cl['cl'],'ko')
 plt.plot(turb['nlf0416_F']['aoa'],turb['nlf0416_F']['cl'])
 plt.plot(trans['nlf0416_F']['aoa'],trans['nlf0416_F']['cl'])
@@ -36,11 +37,10 @@ plt.xlim([-7,20])
 plt.ylim([-0.5,2.0])
 plt.xlabel('Angle of Attack [deg]')
 plt.ylabel('Lift coefficient, $C_{l}$')
-plt.legend(['Experiment','Turbulent: SST','Transition: SST-$\gamma$'])
+plt.legend(['Experiment','Turbulent','Transition'])
 plt.tight_layout()
-plt.savefig("nlf0416_al_cl.png",dpi=300)
 
-fig = plt.figure(2)
+plt.subplot(1, 2, 2)
 plt.plot(cdcl['cd'],cdcl['cl'],'ko')
 plt.plot(turb['nlf0416_F']['cd'],turb['nlf0416_F']['cl'])
 plt.plot(trans['nlf0416_F']['cd'],trans['nlf0416_F']['cl'])
@@ -48,9 +48,8 @@ plt.xlim([0.0,0.025])
 plt.ylim([-0.5,2.0])
 plt.xlabel('Drag coefficient, $C_{d}$')
 plt.ylabel('Lift coefficient, $C_{l}$')
-plt.legend(['Experiment','Turbulent: SST','Transition: SST-$\gamma$'])
+plt.legend(['Experiment','Turbulent','Transition'])
 plt.tight_layout()
-plt.savefig("nlf0416_cd_cl.png",dpi=300)
-
+plt.savefig("nlf0416_clcd.png",dpi=300)
 
 plt.show()

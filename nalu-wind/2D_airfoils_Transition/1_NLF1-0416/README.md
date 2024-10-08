@@ -27,19 +27,19 @@ Two different options for the freestream conditions are tested here:
 1) Local turbulence intensity with the sustaining terms (green line): same way as the OVERFLOW and FUN3D simulations
 2) Constant turbulence intensity without the sustaining terms (red line)
 
-The grid sensitivitiy results are presented for the lift and drag coefficient. In the above figure, the x axis, h, is the 1/sqrt(total number of nodes), meaning smaller values correspond to finer grids. With the Option 1, Nalu-Wind results show similar trends to the FUN3D results. It is also seen that to achieve  the grid-converged trends, at least the third finest mesh resolution, ("Fine") is required. Overall, both Nalu-Wind and FUN3D show more mesh-dependence than OVERFLOW. This is attributed to the numerical shcemes of the unstructred flow solvers, which have lower spatial accuracy compared to structured flow solvers.
+The grid sensitivitiy results are presented for the lift and drag coefficient. In the above figure, the x axis, h, is the 1/sqrt(total number of nodes), meaning smaller values correspond to finer grids. With the Option 1, Nalu-Wind results show similar trends to the FUN3D results. It is also seen that to achieve  the grid-converged trends, at least the third finest mesh resolution, ("Fine") is required. Overall, both Nalu-Wind and FUN3D show more mesh-dependence than OVERFLOW. This is attributed to the numerical shcemes of the unstructred flow solvers, which have lower order of accuracy in space compared to structured flow solvers.
 
 Option 2, which applies a constant turbulence intensity, improves grid convergence of the lift and drag, particularly at low mesh resolutions. For more consistent and accurate predictions, Option 2 is recommended. Option 2 is activated only if fsti is explicitly specified in the Nalu-Wind input with a positive value. However, it should be noted that Option 2 is valid only for single airfoil or single turbine simulations. For internal flow or multi-turbine cases, Option 1 should be used without the sustaning terms. 
 
 ## Results: Angle of Attack Sweep
 
-### Comparison of the lift coefficient
-<img src="figs/clcd/nlf0416_al_cl.png" alt="Cf" width="400">
+### Comparison of the lift and drag coefficient
+<img src="figs/clcd/nlf0416_clcd.png" alt="Cf" width="400">
 
-### Comparison of the drag polar 
-<img src="figs/clcd/nlf0416_cd_cl.png" alt="Cf" width="400">
 
 Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^5]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models and other flow solvers. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation, capturing the trend of the experimental data very well.
+
+A case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster.The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
 ## References
 [^1]: https://transitionmodeling.larc.nasa.gov/
