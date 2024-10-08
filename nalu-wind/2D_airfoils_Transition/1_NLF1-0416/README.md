@@ -9,7 +9,7 @@ Validation and verification of the transition model were conducted for the NASA 
 - Test airfoil: NASA NLF(1)-0416 airfoil with a thickness of 16%
 - Flow Condition: M=0.1, Re=4million, Tu=0.15%
 - CFD meshes with six different resoltuions provided by AIAA CFD Transition Modeling DG[^1]
-   - 2-D strcutred C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
+   - 2-D structured C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
 
