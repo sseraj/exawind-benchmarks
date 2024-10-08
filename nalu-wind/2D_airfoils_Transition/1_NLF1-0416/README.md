@@ -32,7 +32,7 @@ Option 2, which applies a constant turbulence intensity, improves grid convergen
 <img src="figs/clcd/nlf0416_clcd.png" alt="Cf" width="1000">
 
 Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^5]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models and other flow solvers. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation, capturing the trend of the experimental data very well.
-The errors in the predicted drag coefficient at AoA=5° are 2.87% for the transition simulation and 57.56% for the fully turbulent simualtion.
+Specifically, the errors in the predicted drag coefficient at AoA=5° are 2.87% for the transition simulation and 57.56% for the fully turbulent simualtion.
 
 Each case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
