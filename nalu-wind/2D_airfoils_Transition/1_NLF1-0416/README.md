@@ -34,7 +34,7 @@ Option 2, which applies a constant turbulence intensity, improves grid convergen
 ## Results: Angle of Attack Sweep
 
 ### Comparison of the lift and drag coefficient
-<img src="figs/clcd/nlf0416_clcd.png" alt="Cf" width="400">
+<img src="figs/clcd/nlf0416_clcd.png" alt="Cf" width="1000">
 
 
 Based on the grid sensitivity results, a full sweep of angles of attack was performed using the Fine mesh level. The two figures above compare the lift and drag polar with the experimental measurements[^5]. For the lift, the transition simulation slightly over-predicts the lift coefficient in the linear range of the lift curve, a similar behavior also observed in transition predictions using other transition models and other flow solvers. For the drag polar, the transition simulation predicts lower drag across the range of angles of attack than the fully turbulent simulation, capturing the trend of the experimental data very well.
