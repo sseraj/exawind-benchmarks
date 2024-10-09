@@ -2,14 +2,14 @@
 
 # TU Delft DU00-W-212 airfoil
 
-Validation of the transition model is conducted for the DU00-W-212 airfoil using Nalu-Wind with the 1-equation gamma transition model. A full angle-of-attack sweep was performed, and the results are compared against the experimental data[^1] and fully tubulent simulation results.
+Validation of the transition model is conducted for the DU00-W-212 wind turbine airfoil using Nalu-Wind with the 1-equation gamma transition model. A full angle-of-attack sweep was performed, and the results are compared against the experimental data[^1] and fully tubulent simulation results.
 
 ## Simulation Conditions
 
 - Test airfoil: DU00-W-212 airfoil with a thickness of 21% 
 - Flow Condition: M=0.1, Re=3million, Tu=0.0864%
-   - U<sub>∞</sub>=34.1m/s, ρ=1.225kg/m<sup>3</sup>
-   - µ<sub>t</sub>/µ=1, k<sub>∞</sub>=0.0013020495206400003, ω<sub>∞</sub>=114.54981120000002
+   - U<sub>∞</sub>=34.1m/s, ρ=1.225kg/m<sup>3</sup>, µ<sub>t</sub>/µ=1
+   - k<sub>∞</sub>=0.0013020495206400003, ω<sub>∞</sub>=114.54981120000002
 - CFD mesh generated using Pointwise 
    - 2-D structured O-type mesh, with a resolution equivalent to the "Fine" resolution of the AIAA mesh
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model
@@ -30,7 +30,18 @@ Regarding the pitching moment, the transition simulations show better correlatio
 
 In summary, the transition model significantly improves the prediction of the aerodynamic coefficeints in the linear range.
 
-In this simulation, each case took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
+In this simulation, each case took approximately 30 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. It should be noted that the number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel. Refer to the Nalu-Wind log files metnioned below for more details.
 
-## References
+## Contents 
+
+The run directory includes the below files at two angles of attack, 0° and 5°
+
+ - Nalu-Wind input yaml file
+ - Nalu-Wind output log file
+ - Nalu-Wind output force file 
+ - postprocessing script for the force files
+    - python postpro.py
+
+The change in the angle of attack requires just few line changes in the input file
+
 [^1]: https://zenodo.org/records/439827
