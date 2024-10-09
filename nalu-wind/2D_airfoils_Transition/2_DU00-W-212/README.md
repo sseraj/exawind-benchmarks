@@ -8,9 +8,11 @@ Validation of the transition model is conducted for the DU00-W-212 airfoil using
 
 - Test airfoil: DU00-W-212 airfoil with a thickness of 21% 
 - Flow Condition: M=0.1, Re=3million, Tu=0.0864%
+   - U<sub>∞</sub>=34.1m/s, ρ=1.225kg/m<sup>3</sup>
+   - µ<sub>t</sub>/µ=1, k<sub>∞</sub>=0.0013020495206400003, ω<sub>∞</sub>=114.54981120000002
 - CFD mesh generated using Pointwise 
    - 2-D structured O-type mesh, with a resolution equivalent to the "Fine" resolution of the AIAA mesh
-- Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
+- Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
 
 ## Results: Angle of Attack Sweep
