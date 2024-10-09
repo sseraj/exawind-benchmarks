@@ -30,18 +30,15 @@ Regarding the pitching moment, the transition simulations show better correlatio
 
 In summary, the transition model significantly improves the prediction of the aerodynamic coefficeints in the linear range.
 
-In this simulation, each case took approximately 30 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. It should be noted that the number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel. Refer to the Nalu-Wind log files metnioned below for more details.
+In this simulation, each case took approximately 30 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. It should be noted that the number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel. For more details, refer to the Nalu-Wind log files in the run directory.
 
-## Contents 
+## Run Directory Contents 
 
-The run directory includes the below files at two angles of attack, 0° and 5°
+The run directory contains the below files for two angles of attack, 0° and 5°
 
  - Nalu-Wind input yaml file
- - Nalu-Wind output log file
- - Nalu-Wind output force file 
- - postprocessing script for the force files
+ - Nalu-Wind output log & force file
+ - post-processing script for the force files
     - python postpro.py
-
-The change in the angle of attack requires just few line changes in the input file
 
 [^1]: https://zenodo.org/records/439827
