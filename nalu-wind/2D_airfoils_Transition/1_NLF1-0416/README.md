@@ -26,23 +26,23 @@ Two different options for the freestream conditions are tested here:
 
 The grid sensitivitiy results are presented for the lift and drag coefficient. In the above figure, the x axis, h, is the 1/sqrt(total number of nodes), meaning smaller values correspond to finer grids. With the Option 1, Nalu-Wind results show similar trends to the FUN3D results. It is also seen that to achieve  the grid-converged trends, at least the third finest mesh resolution, ("Fine") is required. Overall, both Nalu-Wind and FUN3D show more mesh-dependence than OVERFLOW. This is attributed to the numerical shcemes of the unstructred flow solvers, which have lower order of accuracy in space compared to structured flow solvers.
 
-There are two ways for the option 1: specifying k and ω accounting for the decay from the far-field to the leading edge or using the sustaning terms. In the current work, due to a very large size of the outer boundary from the far-field to the wall, the sustaning terms are applied, which can be specified as below
+There are two ways for the Option 1: specifying k and ω accounting for the decay from the far-field to the leading edge or using the sustaning terms. In the current work, due to a very large size of the outer boundary from the far-field to the wall (1,000 chord lengths), the sustaning terms are applied, which is the same way as the OVERFLOW and FUN3D simulations. In a Nalu-Wind input, the sustaning terms, sdr_amb and tke_amb, can be specified as below
  
     - turbulence_model_constants:
         - fsti: 0
         - sdr_amb: 460.34999999999997
         - tke_amb: 0.00392448375
 
-If the freestream k and ω already accounts for the decay, you don't need to specify sdr_amb and tke_amb.
+If the freestream k and ω account for the decay, the sustaining terms should be zero.
 
-Option 2, which applies a constant turbulence intensity, improves grid convergence of the lift and drag, particularly at low mesh resolutions. For more consistent and accurate predictions, Option 2 is recommended. Option 2 can be used as below
+Option 2, which applies a constant turbulence intensity, improves grid convergence of the lift and drag, particularly at low mesh resolutions. For more consistent and accurate predictions, Option 2 is recommended, which can be speficied in a Nalu-Wind input as follows:
 
     - turbulence_model_constants:
        -  fsti: 0.15
        -  sdr_amb: 0.0
        -  tke_amb: 0.0
 
-It is activated only if fsti is explicitly specified in the Nalu-Wind input with a positive value. However, it should be mentioned that Option 2 is valid only for external flows without any downwash (i.e. single airfoil or single turbine). For internal flow or multi-turbine cases, Option 1 should be used. 
+Option 2 is activated only if fsti is explicitly specified in the Nalu-Wind input with a positive value. However, it should be noted that Option 2 is valid only for external flows without any downwash (i.e. single airfoil or single turbine). For internal flow or multi-turbine cases, Option 1 should be used. 
 
 ## Results: Angle of Attack Sweep
 
@@ -56,7 +56,7 @@ Each case with the "Fine" mesh took approximately 40 minutes to 10,000 iteration
 
 ## Run Directory Contents
 
-The run directory contains the files listed below for two angles of attack, 0° and 5° for both 1) Local turbulence intensity and 2) Constant turbulence intensity options:
+The run directory contains the files listed below for two angles of attack, 0° and 5° for the constant turbulence intensity option:
 
  - Nalu-Wind input yaml file
  - Nalu-Wind output log & force file
