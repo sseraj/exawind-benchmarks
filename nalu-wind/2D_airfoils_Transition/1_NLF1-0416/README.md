@@ -2,15 +2,17 @@
 
 # NASA NLF(1)-0416
 
-Validation and verification of the transition model were conducted for the NASA NLF(1)-0416 airfoil using Nalu-Wind with the 1-equation gamma transition model. First, a grid sensitivity study was performed using six different mesh resolutions from the AIAA CFD Transition Modeling DG[^1]. The results were compared to those from NASA’s structured flow solver, OVERFLOW[^2], and unstructured flow solver, FUN3D[^3], utilizing the same turbulence and transition models, CFD meshes, and inflow conditions. Based on these findings, a full angle-of-attack sweep was performed, with results compared to experimental data.
+Validation and verification of the transition model were conducted for the NASA NLF(1)-0416 airfoil using Nalu-Wind with the 1-equation gamma transition model. First, a grid sensitivity study was performed using six different mesh resolutions from the AIAA CFD Transition Modeling DG[^1]. The results were compared to those from NASA’s structured flow solver, OVERFLOW[^2], and unstructured flow solver, FUN3D[^3], using the same turbulence and transition models, CFD meshes, and inflow conditions. Based on these results, a full angle-of-attack sweep was performed, with results compared to experimental data.
 
 ## Simulation Conditions
 
 - Test airfoil: NASA NLF(1)-0416 airfoil with a thickness of 16%
 - Flow Condition: M=0.1, Re=4million, Tu=0.15%
+   - U<sub>∞</sub>=34.1m/s, ρ=1.225kg/m<sup>3</sup>, µ<sub>t</sub>/µ=1
+   - k<sub>∞</sub>=0.00392448375, ω<sub>∞</sub>=460.35
 - CFD meshes with six different resoltuions provided by AIAA CFD Transition Modeling DG[^1]
    - 2-D structured C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
-- Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model with µt/µ=1
+- Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model
 - Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
 
 ## Results: Grid Sensitivity Study
@@ -24,7 +26,23 @@ Two different options for the freestream conditions are tested here:
 
 The grid sensitivitiy results are presented for the lift and drag coefficient. In the above figure, the x axis, h, is the 1/sqrt(total number of nodes), meaning smaller values correspond to finer grids. With the Option 1, Nalu-Wind results show similar trends to the FUN3D results. It is also seen that to achieve  the grid-converged trends, at least the third finest mesh resolution, ("Fine") is required. Overall, both Nalu-Wind and FUN3D show more mesh-dependence than OVERFLOW. This is attributed to the numerical shcemes of the unstructred flow solvers, which have lower order of accuracy in space compared to structured flow solvers.
 
-Option 2, which applies a constant turbulence intensity, improves grid convergence of the lift and drag, particularly at low mesh resolutions. For more consistent and accurate predictions, Option 2 is recommended. Option 2 is activated only if fsti is explicitly specified in the Nalu-Wind input with a positive value. However, it should be noted that Option 2 is valid only for single airfoil or single turbine simulations. For internal flow or multi-turbine cases, Option 1 should be used without the sustaning terms. 
+There are two ways for the option 1: specifying k and ω accounting for the decay from the far-field to the leading edge or using the sustaning terms. In the current work, due to a very large size of the outer boundary from the far-field to the wall, the sustaning terms are applied, which can be specified as below
+ 
+    - turbulence_model_constants:
+        - fsti: 0
+        - sdr_amb: 460.34999999999997
+        - tke_amb: 0.00392448375
+
+If the freestream k and ω already accounts for the decay, you don't need to specify sdr_amb and tke_amb.
+
+Option 2, which applies a constant turbulence intensity, improves grid convergence of the lift and drag, particularly at low mesh resolutions. For more consistent and accurate predictions, Option 2 is recommended. Option 2 can be used as below
+
+    - turbulence_model_constants:
+       -  fsti: 0.15
+       -  sdr_amb: 0.0
+       -  tke_amb: 0.0
+
+It is activated only if fsti is explicitly specified in the Nalu-Wind input with a positive value. However, it should be mentioned that Option 2 is valid only for external flows without any downwash (i.e. single airfoil or single turbine). For internal flow or multi-turbine cases, Option 1 should be used. 
 
 ## Results: Angle of Attack Sweep
 
@@ -35,6 +53,15 @@ Based on the grid sensitivity results, a full sweep of angles of attack was perf
 Specifically, the errors in the predicted drag coefficient at AoA=5° are 2.87% for the transition simulation and 57.56% for the fully turbulent simualtion.
 
 Each case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
+
+## Run Directory Contents
+
+The run directory contains the files listed below for two angles of attack, 0° and 5° for both 1) Local turbulence intensity and 2) Constant turbulence intensity options:
+
+ - Nalu-Wind input yaml file
+ - Nalu-Wind output log & force file
+ - post-processing script for the force files
+    - python postpro.py
 
 ## References
 [^1]: https://transitionmodeling.larc.nasa.gov/
