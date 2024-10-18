@@ -28,7 +28,7 @@ linear_solvers:
     simple_hypre_matrix_assemble: yes 
     dump_hypre_matrix_stats: no
     segregated_solver: yes 
-    hypre_cfg_file: /projects/hfm/sbidadi/nrel_phase_vi/input_files/hypre_file.yaml
+    hypre_cfg_file: ../../config_files/hypre_file.yaml
     hypre_cfg_node: hypre_simple_precon
 
   # solver for the scalars TKE, SDR
