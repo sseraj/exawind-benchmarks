@@ -13,7 +13,8 @@ Validation and verification of the transition model were conducted for the NASA 
 - CFD meshes with six different resoltuions provided by AIAA CFD Transition Modeling DG[^1]
    - 2-D structured C-type meshes: Tiny, Coarse, Medium, Fine, Extra, Ultra resolutions[^4]
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model
-- Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
+- Nalu-Wind version: [f3cecafbdc05e61d0550ff41a30307425ef8197b](https://github.com/Exawind/nalu-wind/commit/f3cecafbdc05e61d0550ff41a30307425ef8197b)
+
 
 ## Results: Grid Sensitivity Study
 

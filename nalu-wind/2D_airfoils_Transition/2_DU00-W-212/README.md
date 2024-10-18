@@ -13,7 +13,7 @@ Validation of the transition model is conducted for the DU00-W-212 wind turbine 
 - CFD mesh generated using Pointwise 
    - 2-D structured O-type mesh, with a resolution equivalent to the "Fine" resolution of the AIAA mesh
 - Turbulence / Transition model: SST-2003 with the 1-eq Gamma transition model
-- Nalu-Wind version: [6155b17fa6b8914a819a492230c96f7990a97b78](https://github.com/Exawind/nalu-wind/commit/6155b17fa6b8914a819a492230c96f7990a97b78)
+- Nalu-Wind version: [f3cecafbdc05e61d0550ff41a30307425ef8197b](https://github.com/Exawind/nalu-wind/commit/f3cecafbdc05e61d0550ff41a30307425ef8197b)
 
 ## Results: Angle of Attack Sweep
 
