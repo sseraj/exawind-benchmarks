@@ -1,4 +1,4 @@
-<!-- This file is automatically compiled into the website. Begin headings with ##, not #, to avoid breaking the website heading hierarchy. -->
+<!-- This file is automatically compiled into the website. Begin headings with ## (or lower), not #, to avoid breaking the website heading hierarchy. -->
 
 ## NREL Phase VI Turbine
 
