@@ -188,7 +188,7 @@ realms:
       value: 1.0443125000000002e-05
     target_name:
     - Flow-QUAD
-  mesh: /kfs2/projects/sviv/bumseok/nalu_trans_repo/af_polar_exawind/nalu_inputs/grids/nlf0416/nlf0416_F.exo
+  mesh: nlf0416_F.exo
   mesh_transformation:
   - mesh_parts:
     - Flow-QUAD
