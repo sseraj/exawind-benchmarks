@@ -47,7 +47,7 @@ linear_solvers:
     reuse_linear_system: yes 
     simple_hypre_matrix_assemble: yes 
     dump_hypre_matrix_stats: no
-    hypre_cfg_file: /projects/hfm/sbidadi/nrel_phase_vi/input_files/hypre_file.yaml
+    hypre_cfg_file: hypre_file.yaml
     hypre_cfg_node: hypre_simple_precon
 
   # solver for the pressure
@@ -66,7 +66,7 @@ linear_solvers:
     reuse_linear_system: yes
     simple_hypre_matrix_assemble: yes
     dump_hypre_matrix_stats: no
-    hypre_cfg_file: /projects/hfm/sbidadi/nrel_phase_vi/input_files/hypre_file.yaml
+    hypre_cfg_file: hypre_file.yaml
     hypre_cfg_node: hypre_elliptic
 
 Time_Integrators:
@@ -175,7 +175,7 @@ realms:
       type: constant
       value: 2.22e-4
     target_name: fluid-hex
-  mesh: /scratch/sbidadi/naca_airfoil_test/mesh/naca0021_aoa_60.exo
+  mesh: naca0021_aoa_60.exo
   name: realm_1
   output:
     output_data_base_name: results/naca_0021_60_iddes.e
