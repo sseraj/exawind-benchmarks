@@ -1,8 +1,7 @@
 Benchmark problems using hybrid overset solver (ExaWind)
 ========================================================
 
-NREL Phase VI turbine
----------------------
+.. mdinclude:: ../../exawind/NREL_Phase_VI_Turbine/README.md
 
 With RANS
 ^^^^^^^^^
