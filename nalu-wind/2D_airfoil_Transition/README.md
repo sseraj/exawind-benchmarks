@@ -1,7 +1,6 @@
+<!-- This file is automatically compiled into the website. Please copy linked files into .website_src/ paths to enable website rendering -->
 
-<!-- This file is automatically compiled into the website. Begin headings with ## (or lower), not #, to avoid breaking the website heading hierarchy. -->
-
-## Two-dimensional (2D) flow past airfoils
+# Two-dimensional (2D) flow past airfoils
 
 These benchmark cases employ a RANS modeling framework and serve as validation and verification of the 1-eq Gamma Transition Model.
 They include the following airfoils and flow parameters:

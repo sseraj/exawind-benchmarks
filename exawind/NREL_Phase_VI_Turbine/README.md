@@ -1,6 +1,6 @@
+<!-- This file is automatically compiled into the website. Please copy linked files into .website_src/ paths to enable website rendering -->
 
-
-## NREL Phase VI Rotor
+# NREL Phase VI Rotor
 ExaWind simulations are performed for NREL’s Unsteady Aerodynamics Experiment Phase VI rotor[^1]. The experimental conditions of the rotor are summarized below:
 
 - Tested in the 80 X 120 ft wind tunnel at NASA Ames Research Center 
@@ -58,7 +58,12 @@ This approach was particularly important for the wind speed of 15 m/s to acheive
 
 The figure below compares the rotor performance (thrust and torque) against experimental data and available other numerical results[^2]. For the Nalu-Wind results, the rotor performance was averaged over the last one revolution.
 
-<img src="fig/PhaseVi.png" alt="Cf" width="1000">
+```{image} figures_and_scripts/PhaseVi.png
+:alt: Cf
+:class: bg-primary
+:width: 1000px
+:align: center
+```
 
 For the thrust, the transition simulations predict slightly higher values than the fully turbulent simulations, although the differences are minor. For the torque, both fully turbulent and transition simulation results fall within the standard deviation of the experimental measurements. At 7 m/s, the transition simulation predicts slightly higher torque than the fully turbulent simulations due to lower drag from more laminar flow. On the other hand, at 15 m/s, the fully turbulent simulations predict higher torque. This could be attributed to higher turbulent eddy viscosity in the fully turbulent simulation, resulting in more attached flow on the blade section. Overall, both fully turbulent and transition simulations provide reasonable predictions.
 

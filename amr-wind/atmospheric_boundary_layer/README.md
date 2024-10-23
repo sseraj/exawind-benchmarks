@@ -1,6 +1,6 @@
-<!-- This file is automatically compiled into the website. Begin headings with ## (or lower), not #, to avoid breaking the website heading hierarchy. -->
+<!-- This file is automatically compiled into the website. Please copy linked files into .website_src/ paths to enable website rendering -->
 
-## Atmospheric Boundary Layer (ABL)
+# Atmospheric Boundary Layer (ABL)
 
 These AMR-Wind benchmark cases feature three convective stability states: neutral, stable, and unstable.
 Each case is performed with a uniform mesh resolution, and the three cases adhere to examples from the

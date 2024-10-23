@@ -1,6 +1,6 @@
-<!-- This file is automatically compiled into the website. Begin headings with ## (or lower), not #, to avoid breaking the website heading hierarchy. -->
+<!-- This file is automatically compiled into the website. Please copy linked files into .website_src/ paths to enable website rendering -->
 
-## NREL 5-MW Turbine
+# NREL 5-MW Turbine
 
 Add generic description of NREL 5-MW Turbine cases
 

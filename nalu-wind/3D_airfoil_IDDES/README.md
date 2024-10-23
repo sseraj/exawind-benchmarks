@@ -1,6 +1,6 @@
-<!-- This file is automatically compiled into the website. Begin headings with ## (or lower), not #, to avoid breaking the website heading hierarchy. -->
+<!-- This file is automatically compiled into the website. Please copy linked files into .website_src/ paths to enable website rendering -->
 
-## Three-dimensional (3D) flow past airfoils
+# Three-dimensional (3D) flow past airfoils
 
 These benchmark cases use IDDES for turbulence modeling, and they simulate flow past a NACA 0021 airfoil.
 
