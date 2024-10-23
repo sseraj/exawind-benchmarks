@@ -1,6 +1,11 @@
 Benchmark problems using Nalu-Wind
 ==================================
 
+..
+   Note: README markdown files include headers that are equivalent to underlines (-----) in rst. 
+   Use underlines for equivalent header rank and carats (^^^^^) for the next level down.
+..
+
 .. mdinclude:: ../../nalu-wind/2D_airfoil_Transition/README.md
 
 `Go to cases in repository
