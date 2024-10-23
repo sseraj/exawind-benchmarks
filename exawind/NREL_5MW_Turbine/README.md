@@ -4,4 +4,4 @@
 
 Add generic description of NREL 5-MW Turbine cases
 
-Two variants of this simulation were performed: one with rigid blades and one with flexible blades modeled using OpenFAST.
+Two variants of this simulation are provided: one with rigid blades and one with flexible blades modeled using OpenFAST.

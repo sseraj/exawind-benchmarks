@@ -11,3 +11,4 @@ ExaWind simulations are performed for NREL’s Unsteady Aerodynamics Experiment 
 - Nonlinear twist with blade tip pitch of 3deg
 - Pitch and twist axis at 0.3c
 
+Two variants of this simulation were performed: one with only RANS turbulence modeling and one with RANS turbulence modeling accompanied by the one-equation Gamma transition model.
