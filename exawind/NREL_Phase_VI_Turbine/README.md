@@ -1,5 +1,8 @@
 <!-- This file is automatically compiled into the website. Please copy linked files into .website_src/ paths to enable website rendering -->
 
+[^1]: M. H. Hand et al, "Unsteady Aerodynamics Experiment Phase VI: Wind Tunnel Test Configurations and Available Data Campaigns," NREL/TP-500-29955, 2001.
+[^2]: Sørensen, "CFD Modelling of Laminar-turbulent Transition for Airfoils and Rotors Using the Gamm-Re Model," Wind Energ. 12:715–733, 2009.
+
 # NREL Phase VI Rotor
 ExaWind simulations are performed for NREL’s Unsteady Aerodynamics Experiment Phase VI rotor[^1]. The experimental conditions of the rotor are summarized below:
 
@@ -69,7 +72,4 @@ For the thrust, the transition simulations predict slightly higher values than t
 
 The simulations were performed using 1,440 cores on NREL's Kestrel HPC cluster: 1152 cores for Nalu-Wind, and 288 cores for AMR-Wind. The transition simulations took approximately 55 hours for the total 8 revolutions. 
 
-## Reference
-[^1]: M. H. Hand et al, "Unsteady Aerodynamics Experiment Phase VI: Wind Tunnel Test Configurations and Available Data Campaigns," NREL/TP-500-29955, 2001.
-[^2]: Sørensen, "CFD Modelling of Laminar-turbulent Transition for Airfoils and Rotors Using the Gamm-Re Model," Wind Energ. 12:715–733, 2009.
-
+## References
