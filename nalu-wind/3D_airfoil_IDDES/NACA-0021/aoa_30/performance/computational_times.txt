@@ -1,5 +1,5 @@
-NNodes	Wall-clock time (s)
-1	   	  9.54
+NNodes	Wall-clock time / timestep (s)
+1	   	9.54
 2       4.84
 4       3.03
 6       2.72

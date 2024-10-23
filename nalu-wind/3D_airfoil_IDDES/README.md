@@ -2,7 +2,9 @@
 
 # Three-dimensional (3D) flow past airfoils
 
-These benchmark cases use IDDES for turbulence modeling, and they simulate flow past a NACA 0021 airfoil.
+These benchmark cases use IDDES for turbulence modeling, and they simulate flow past a NACA 0021 airfoil. Input files are provided for 4 angles of attack: 30, 45, 60 and 90 degrees.
 
-Publication:
+The Nalu-Wind hash used is 4faf299. Every case is run for at least 100 iterations to confirm input-file compatibility and provide profiling information in the log file footer. The 30 degree case has been run with different numbers of nodes to establish scaling behavior, and the 45 degree case has been run for 8000 steps to output force and moment results.
+
+These cases correspond to the following publication:
 Bidadi, S.; Vijayakumar, G.; Deskos, G.; Sprague, M. Three-Dimensional Aerodynamics and Vortex-Shedding Characteristics of Wind Turbine Airfoils over 360-Degree Angles of Attack. Energies 2024, 17, 4328. https://doi.org/10.3390/en17174328 
