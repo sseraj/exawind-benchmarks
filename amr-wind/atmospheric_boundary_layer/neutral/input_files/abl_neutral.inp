@@ -7,7 +7,7 @@ time.stop_time               =   120000.0     # Max (simulated) time to evolve
 #¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨#
 #         TIME STEP COMPUTATION         #
 #.......................................#
-time.fixed_dt         =   0.1        # Use this constant dt if > 0
+time.fixed_dt         =   0.5        # Use this constant dt if > 0
 time.cfl              =   0.95         # CFL factor
 
 #¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨#
@@ -16,6 +16,7 @@ time.cfl              =   0.95         # CFL factor
 time.plot_interval            =  1000       # Steps between plot files
 time.checkpoint_interval      =  5000       # Steps between checkpoint files
 ABL.stats_output_frequency    = 100
+ABL.stats_output_format = netcdf
 
 #¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨#
 #               PHYSICS                 #
@@ -28,6 +29,18 @@ incflo.use_godunov = 1
 incflo.godunov_type = weno_z
 incflo.diffusion_type = 1
 turbulence.model = OneEqKsgsM84
+
+## Set solver tolerances
+diffusion.mg_rtol                           = 1.0e-8
+diffusion.mg_atol                           = 1.0e-8
+
+# MLMG options for MAC Projection
+mac_proj.mg_rtol                            = 1.0e-8
+mac_proj.mg_atol                            = 1.0e-8
+
+# MLMG options for Nodal Projection
+nodal_proj.mg_rtol                          = 1.0e-8
+nodal_proj.mg_atol                          = 1.0e-8
 
 ## Physical parameters
 transport.viscosity = 0.0
