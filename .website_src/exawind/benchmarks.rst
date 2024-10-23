@@ -9,8 +9,7 @@ With RANS
 With RANS and transition model
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-NREL 5-MW turbine
------------------
+.. mdinclude:: ../../exawind/NREL_5MW_Turbine/README.md
 
 With rigid blades
 ^^^^^^^^^^^^^^^^^

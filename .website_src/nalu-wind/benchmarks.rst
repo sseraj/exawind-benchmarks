@@ -1,20 +1,11 @@
 Benchmark problems using Nalu-Wind
 ==================================
 
-Two-dimensional (2D) flow past airfoils
----------------------------------------
+.. mdinclude:: ../../nalu-wind/2D_airfoil_Transition/README.md
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    clcd_cfd_total
 
-RANS with transition model
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-
-Three-dimensional (3D) flow past airfoils
------------------------------------------
-
-IDDES
-^^^^^
+.. mdinclude:: ../../nalu-wind/3D_airfoil_IDDES/README.md

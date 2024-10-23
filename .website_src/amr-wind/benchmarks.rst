@@ -1,8 +1,7 @@
 Benchmark problems using AMR-Wind
 =================================
 
-Atmospheric boundary layer (ABL)
---------------------------------
+.. mdinclude:: ../../amr-wind/atmospheric_boundary_layer/README.md
 
 Convective stability state: stable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
