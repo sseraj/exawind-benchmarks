@@ -58,12 +58,7 @@ This approach was particularly important for the wind speed of 15 m/s to acheive
 
 The figure below compares the rotor performance (thrust and torque) against experimental data and available other numerical results [2]. For the Nalu-Wind results, the rotor performance was averaged over the last one revolution.
 
-```{image} figures_and_scripts/PhaseVi.png
-:alt: Cf
-:class: bg-primary
-:width: 1000px
-:align: center
-```
+![Cf](figures_and_scripts/PhaseVi.png)
 
 For the thrust, the transition simulations predict slightly higher values than the fully turbulent simulations, although the differences are minor. For the torque, both fully turbulent and transition simulation results fall within the standard deviation of the experimental measurements. At 7 m/s, the transition simulation predicts slightly higher torque than the fully turbulent simulations due to lower drag from more laminar flow. On the other hand, at 15 m/s, the fully turbulent simulations predict higher torque. This could be attributed to higher turbulent eddy viscosity in the fully turbulent simulation, resulting in more attached flow on the blade section. Overall, both fully turbulent and transition simulations provide reasonable predictions.
 
