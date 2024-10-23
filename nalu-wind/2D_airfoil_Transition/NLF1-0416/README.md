@@ -55,15 +55,6 @@ Specifically, the errors in the predicted drag coefficient at AoA=5° are 2.87% 
 
 Each case with the "Fine" mesh took approximately 40 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. The number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel.
 
-## Run Directory Contents
-
-The run directory contains the files listed below for two angles of attack, 0° and 5° for the constant turbulence intensity option:
-
- - Nalu-Wind input yaml file
- - Nalu-Wind output log & force file
- - post-processing script for the force files
-    - python postpro.py
-
 ## References
 [^1]: https://transitionmodeling.larc.nasa.gov/
 [^2]: Venkatachari, B. S., et al., "Implementation and Assessment of Menter’s Galilean-Invariant 𝛾

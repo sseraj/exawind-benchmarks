@@ -32,13 +32,4 @@ In summary, the transition model significantly improves the prediction of the ae
 
 In this simulation, each case took approximately 30 minutes to 10,000 iterations, using 4 Picard iterations per time step, on 26 cores of NREL's Kestrel HPC cluster. It should be noted that the number of cores per case was not determined by Nalu-Wind’s scalability on Kestrel, but simply to accommodate 4 cases on a single node of Kestrel. For more details, refer to the Nalu-Wind log files in the run directory.
 
-## Run Directory Contents 
-
-The run directory contains the below files for two angles of attack, 0° and 5°
-
- - Nalu-Wind input yaml file
- - Nalu-Wind output log & force file
- - post-processing script for the force files
-    - python postpro.py
-
 [^1]: https://zenodo.org/records/439827
