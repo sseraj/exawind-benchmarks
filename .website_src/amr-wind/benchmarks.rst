@@ -3,11 +3,5 @@ Benchmark problems using AMR-Wind
 
 .. mdinclude:: ../../amr-wind/atmospheric_boundary_layer/README.md
 
-Convective stability state: stable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Convective stability state: unstable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Convective stability state: neutral
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+`Go to cases in repository
+<https://github.com/Exawind/exawind-benchmarks/tree/main/amr-wind/atmospheric_boundary_layer>`__
