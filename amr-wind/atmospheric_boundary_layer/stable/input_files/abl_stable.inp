@@ -2,7 +2,7 @@
 #            SIMULATION STOP            #
 #.......................................#
 time.stop_time               = 36000.0  # Max (simulated) time to evolve
-time.max_step                =   -200   # Max number of time steps
+time.max_step                = 100   # Max number of time steps
 
 
 #¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨#
@@ -62,6 +62,18 @@ ABL.stats_output_frequency = 16
 ABL.stats_output_format = netcdf
 
 
+## Set solver tolerances
+diffusion.mg_rtol                           = 1.0e-8
+diffusion.mg_atol                           = 1.0e-8
+
+# MLMG options for MAC Projection
+mac_proj.mg_rtol                            = 1.0e-8
+mac_proj.mg_atol                            = 1.0e-8
+
+# MLMG options for Nodal Projection
+nodal_proj.mg_rtol                          = 1.0e-8
+nodal_proj.mg_atol                          = 1.0e-8
+
 #¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨#
 #        ADAPTIVE MESH REFINEMENT       #
 #.......................................#
@@ -101,5 +113,5 @@ sampling.z_plane.axis1 = 399.21875 0.0 0.0
 sampling.z_plane.axis2 = 0.0 399.21875 0.0
 sampling.z_plane.origin = 0.390625 0.390625 0.0
 sampling.z_plane.num_points = 512 512
-sampling.z_plane.normal = 0.0 0.0 1.0
+sampling.z_plane.offset_vector = 0.0 0.0 1.0
 sampling.z_plane.offsets = 9.765625 49.609375 99.609375 149.609375
