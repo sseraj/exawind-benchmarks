@@ -25,7 +25,7 @@ To cite the cases and data from this repository, please use the following refere
     year = {2024}
 }
 
-@article{Bidadi2023},
+@article{Bidadi2023,
     author = {Shreyas Bidadi, Ganesh Vijayakumar, Ashesh Sharma and Michael A. Sprague},
     title = {Mesh and model requirements for capturing deep-stall aerodynamics in low-Mach-number flows},
     journal = {Journal of Turbulence},
