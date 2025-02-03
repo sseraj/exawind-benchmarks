@@ -70,7 +70,11 @@ linear_solvers:
   type: hypre
   write_matrix_files: false
 realms:
-- boundary_conditions:
+- automatic_decomposition_type: rcb
+  rebalance_mesh: yes
+  stk_rebalance_method: parmetis
+  check_jacobians: true
+  boundary_conditions:
   - inflow_boundary_condition: bc_inflow
     inflow_user_data:
       pressure: 0.0
@@ -238,7 +242,11 @@ realms:
       - background-hex
     time_filter_interval: 100000.0
   use_edges: true
-- boundary_conditions:
+- automatic_decomposition_type: rcb
+  rebalance_mesh: yes
+  stk_rebalance_method: parmetis
+  check_jacobians: true
+  boundary_conditions:
   - target_name: wing
     wall_boundary_condition: bc_wing
     wall_user_data:
@@ -326,7 +334,7 @@ realms:
     - iblank_cell
   post_processing:
   - frequency: 1
-    output_file_name: pp_ffa_w3_301_50_restart_2.dat
+    output_file_name: pp_ffa_w3_301_50.dat
     parameters:
     - 0
     - 0
@@ -335,7 +343,7 @@ realms:
     - wing-pp
     type: surface
   - frequency: 1
-    output_file_name: ffa_w3_301_50_restart_2.dat
+    output_file_name: ffa_w3_301_50.dat
     parameters:
     - 0
     - 0
