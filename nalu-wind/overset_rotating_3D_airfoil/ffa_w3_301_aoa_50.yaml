@@ -163,7 +163,7 @@ realms:
       value: 9.0e-06
     target_name:
     - background-hex
-  mesh: ffa_w3_301_50_background.rst
+  mesh: background.exo
   name: background
   output:
     output_data_base_name: results_background/ffa_w3_301_50.e
@@ -194,8 +194,6 @@ realms:
   restart:
     restart_data_base_name: restart_background/ffa_w3_301_50.rst
     restart_frequency: 153
-    restart_start: 4131
-    restart_time: 1.1016
   solution_options: &id004
     name: myOptions
     options:
@@ -304,7 +302,7 @@ realms:
     specifications: *id003
     target_name:
     - fluid-hex
-  mesh: ffa_w3_301_50_airfoil.rst
+  mesh: ffa_w3_301_near_body_aoa_50.exo
   name: airfoil
   output:
     output_data_base_name: results_airfoil/ffa_w3_301_50.e
@@ -355,8 +353,6 @@ realms:
   restart:
     restart_data_base_name: restart_airfoil/ffa_w3_301_50.rst
     restart_frequency: 153
-    restart_start: 4131
-    restart_time: 1.1016
   solution_options: *id004
   turbulence_averaging:
     specifications:
