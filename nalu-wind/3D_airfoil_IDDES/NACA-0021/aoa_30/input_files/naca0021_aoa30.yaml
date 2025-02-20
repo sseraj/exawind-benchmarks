@@ -18,7 +18,7 @@ linear_solvers:
     preconditioner: boomerAMG
     tolerance: 1e-5
     max_iterations: 1000
-    kspace: 1000
+    kspace: 50
     sync_alg: 1
     output_level: 0
     write_matrix_files: no
@@ -38,7 +38,7 @@ linear_solvers:
     preconditioner: boomerAMG
     tolerance: 1e-5
     max_iterations: 1000
-    kspace: 1000
+    kspace: 50
     sync_alg: 1
     output_level: 0
     write_matrix_files: no
@@ -57,7 +57,7 @@ linear_solvers:
     preconditioner: boomerAMG
     tolerance: 1e-5
     max_iterations: 1000
-    kspace: 1000
+    kspace: 50
     sync_alg: 1
     output_level: 0
     write_matrix_files: no
