@@ -1,4 +1,24 @@
-hypre_simple_precon:
+hypre_momentum:
+  output_level: 0
+  bamg_max_levels: 1
+  bamg_relax_type: 18
+  bamg_num_sweeps: 2
+  bamg_cycle_type: 1
+  bamg_relax_order: 0
+  bamg_output_level: 0
+  bamg_debug: 0
+
+hypre_tke:
+  output_level: 0
+  bamg_max_levels: 1
+  bamg_relax_type: 18
+  bamg_num_sweeps: 2
+  bamg_cycle_type: 1
+  bamg_relax_order: 0
+  bamg_output_level: 0
+  bamg_debug: 0
+
+hypre_sdr:
   output_level: 0
   bamg_max_levels: 1
   bamg_relax_type: 18

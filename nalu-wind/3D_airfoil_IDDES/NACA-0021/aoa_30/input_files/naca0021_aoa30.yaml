@@ -29,10 +29,10 @@ linear_solvers:
     dump_hypre_matrix_stats: no
     segregated_solver: yes 
     hypre_cfg_file: hypre_file.yaml
-    hypre_cfg_node: hypre_simple_precon
+    hypre_cfg_node: hypre_momentum
 
-  # solver for the scalars TKE, SDR
-  - name: solve_scalar
+  # solver for the TKE
+  - name: solve_tke
     type: hypre
     method: hypre_gmres
     preconditioner: boomerAMG
@@ -48,7 +48,26 @@ linear_solvers:
     simple_hypre_matrix_assemble: yes 
     dump_hypre_matrix_stats: no
     hypre_cfg_file: hypre_file.yaml
-    hypre_cfg_node: hypre_simple_precon
+    hypre_cfg_node: hypre_tke
+
+  # solver for the SDR
+  - name: solve_sdr
+    type: hypre
+    method: hypre_gmres
+    preconditioner: boomerAMG
+    tolerance: 1e-5
+    max_iterations: 1000
+    kspace: 50
+    sync_alg: 1
+    output_level: 0
+    write_matrix_files: no
+    #write_preassembly_matrix_files: yes
+    recompute_preconditioner_frequency: 1
+    reuse_linear_system: yes
+    simple_hypre_matrix_assemble: yes
+    dump_hypre_matrix_stats: no
+    hypre_cfg_file: hypre_file.yaml
+    hypre_cfg_node: hypre_sdr
 
   # solver for the pressure
   - name: solve_elliptic
@@ -137,8 +156,8 @@ realms:
     name: theEqSys
     solver_system_specification:
       velocity: solve_mom
-      turbulent_ke: solve_scalar
-      specific_dissipation_rate: solve_scalar
+      turbulent_ke: solve_tke
+      specific_dissipation_rate: solve_sdr
       pressure: solve_elliptic
       ndtw: solve_elliptic
 
