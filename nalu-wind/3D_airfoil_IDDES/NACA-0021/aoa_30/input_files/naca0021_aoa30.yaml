@@ -14,7 +14,7 @@ linear_solvers:
   # solver for the momentum
   - name: solve_mom
     type: hypre
-    method: hypre_gmres
+    method: hypre_bicgstab
     preconditioner: boomerAMG
     tolerance: 1e-5
     max_iterations: 1000
@@ -34,7 +34,7 @@ linear_solvers:
   # solver for the TKE
   - name: solve_tke
     type: hypre
-    method: hypre_gmres
+    method: hypre_bicgstab
     preconditioner: boomerAMG
     tolerance: 1e-5
     max_iterations: 1000
