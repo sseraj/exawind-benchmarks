@@ -42,11 +42,11 @@ hypre_elliptic:
   #bamg_num_up_sweeps: 2
   #bamg_num_coarse_sweeps: 1
 
-  bamg_strong_threshold: 0.3243198904981685
+  bamg_strong_threshold: 0.2
   bamg_trunc_factor: 0.4227143073461007
   bamg_pmax_elmts: 3
 
-  bamg_agg_num_levels: 2
+  bamg_agg_num_levels: 1
   bamg_agg_interp_type: 7
   bamg_agg_pmax_elmts: 3
 
